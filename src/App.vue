@@ -8,7 +8,7 @@
       <div class="sidebar"><SideNavigation ref="SideNav"></SideNavigation></div>
       <div class="content">
         <div class="router-tip">
-          {{ navStore.titleFirstName }} / {{ navStore.titleLastName }}
+          <!-- {{ navStore.titleFirstName }} / {{ navStore.titleLastName }} -->
         </div>
         <router-view></router-view>
       </div>
@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import TopNavigation from "./components/TopNavigation.vue";
 import SideNavigation from "./components/SideNavigation.vue";
 import { useNavStore } from "@/stores/nav";
@@ -35,7 +35,9 @@ const initRouter = () => {
 router.replace("/" + navStore.businessType + "/" + "1-1");
 //登录相关
 import haierLogin from "../src/utils/login";
-haierLogin.login();
+onMounted(() => {
+  haierLogin.login();
+});
 </script>
 
 <style lang="scss">
@@ -76,13 +78,15 @@ body {
       .content {
         width: 82.2%;
         height: 891px;
-        padding: 0 2%;
+        // padding: 0 2%;
+        padding: 0 1%;
         background-color: #f2f2f2;
         overflow-y: auto;
         overflow-x: hidden;
         .router-tip {
           width: 100%;
-          height: 75px;
+          // height: 75px;
+          height: 25px;
           padding: 5px 0 0 8px;
           line-height: 75px;
           text-align: left;

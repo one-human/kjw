@@ -1,8 +1,10 @@
 <script setup>
 import { ref, reactive, defineEmits } from "vue";
 import { useNavStore } from "@/stores/nav";
+import { useUserStore } from "@/stores/user";
 let businessValue = ref("Group");
 const navStore = useNavStore();
+const userStore = useUserStore();
 //初始化路由
 const emit = defineEmits(["init-router"]);
 const routerInit = () => {
@@ -74,7 +76,7 @@ const businessType = reactive([
     </div>
     <div class="profile-content">
       <img class="avatar" src="../assets/avatar.png" alt="avatar" />
-      <span class="name">范思哲</span>
+      <span class="name">{{ userStore.nickName }}</span>
     </div>
   </div>
 </template>

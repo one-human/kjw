@@ -4,6 +4,7 @@ const GroupDevelopmentProject = () =>
   import("../components/group/DevelopmentProject.vue");
 const GroupDevelopmentInvestment = () =>
   import("../components/group/DevelopmentInvestment.vue");
+const GroupPatent = () => import("../components/group/GroupPatent");
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: "/Group/1-2",
     name: "GroupDevelopmentInvestment",
     component: GroupDevelopmentInvestment,
+  },
+  {
+    path: "/Group/2-2",
+    name: "GroupPatent",
+    component: GroupPatent,
   },
 ];
 

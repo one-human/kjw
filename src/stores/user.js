@@ -6,6 +6,8 @@ export const useUserStore = defineStore("user", {
     token: null,
     //用户信息
     userInfo: null,
+    //用户昵称
+    nickName: "",
   }),
   actions: {
     //设定token
@@ -15,6 +17,10 @@ export const useUserStore = defineStore("user", {
     //设定用户信息
     setUserInfo(obj) {
       this.userInfo = obj;
+    },
+    //设定用户昵称
+    setNickName(name) {
+      this.nickName = name;
     },
   },
   getters: {},

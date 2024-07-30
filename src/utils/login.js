@@ -1,4 +1,4 @@
-// import { useUserStore } from "@/stores/user";
+import { useUserStore } from "@/stores/user";
 let haierUserCenterObj; // 注入的全局对象
 
 if (window.__USERCENTER__ === "undefined") {
@@ -27,9 +27,13 @@ const haierLogin = {
         // force: false, // 自动登录失败后，是否立刻重定向到账号中心登录页
         // invalidateToken: false, // 是否禁用当前token以重新登录
       });
-      console.log("登录", res);
+      // console.log("登录", res);
       if (res.success) {
-        console.log("登录成功", res);
+        const userStore = useUserStore();
+        // console.log("登录成功", res);
+        userStore.setToken(res.token);
+        userStore.setUserInfo(res.userInfo);
+        userStore.setNickName(res.userInfo.nickName);
       } else {
         console.error("login error 1====", res.errorMessage);
       }
