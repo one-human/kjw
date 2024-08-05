@@ -10,7 +10,7 @@ const navStore = useNavStore();
 const systemName = ref("科创体系");
 const resultName = ref("科创成果");
 //测导航选中项
-const activeMenu = ref("1-1");
+const activeMenu = ref("1-4");
 //更改选中项
 const handleMenuChange = (value) => {
   activeMenu.value = value;
@@ -25,8 +25,8 @@ const changeTitleName = (firstName, lastName) => {
 };
 //初始化侧导航 初始化路由
 const initNav = () => {
-  handleMenuChange("1-1");
-  routeNavigation("1-1");
+  handleMenuChange("1-4");
+  routeNavigation("1-4");
 };
 defineExpose({ initNav });
 //不同业务类型侧导航选项

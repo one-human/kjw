@@ -32,7 +32,7 @@ const initRouter = () => {
   }
 };
 //初始化路由
-router.replace("/" + navStore.businessType + "/" + "1-1");
+router.replace("/" + navStore.businessType + "/" + "1-4");
 //登录相关
 import haierLogin from "../src/utils/login";
 onMounted(() => {
