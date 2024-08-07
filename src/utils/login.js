@@ -12,8 +12,7 @@ haierUserCenterObj.configUserCenter({
   clientId: "726a49c5b8774daadf91ff294ebad312", //生产K码
   ssoUrl: "https://iama.haier.net", //账号中心统一登录页
   appId: "cli_a26a539d133b1013", //应用ID
-  tokenUrl:
-    "http://10.250.12.68:8080/webroot/decision/haier/getTokenAndUserInfoByCode", //集成了账号中心提供后端服务的地址
+  tokenUrl: "/api-kjw/auth/token", //集成了账号中心提供后端服务的地址
   // appId: "cli_a6e00664d9d2900b",
   // clientId: "Kc58ee302e3a60056",
   // ssoUrl: "https://iam-test.haier.net", // 账号中心统一登录页
@@ -32,6 +31,7 @@ const haierLogin = {
       if (res.success) {
         const userStore = useUserStore();
         // console.log("登录成功", res);
+        localStorage.setItem("token", res.token);
         userStore.setToken(res.token);
         userStore.setUserInfo(res.userInfo);
         userStore.setNickName(res.userInfo.nickName);

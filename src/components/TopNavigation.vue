@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive, defineEmits } from "vue";
+import { ref, reactive, defineEmits, defineExpose } from "vue";
 import { useNavStore } from "@/stores/nav";
 import { useUserStore } from "@/stores/user";
 let businessValue = ref("Group");
@@ -20,6 +20,11 @@ const changeBusinessType = (value) => {
   routerInit();
   titleInit();
 };
+const initBusinessType = (value) => {
+  navStore.businessTypeChenge(value);
+  businessValue.value = value;
+};
+defineExpose({ initBusinessType });
 //业务类型
 const businessType = reactive([
   {

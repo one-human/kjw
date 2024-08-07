@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 const iframeSrc = ref(
-  "https://fanbi.haier.net:8080/webroot/decision/view/form?viewlet=JT%252FIT%252F02%252FKJWSZH%252FKJHZ%252FKJHZ.frm&op=form_adaptive"
+  "https://fanbi11.haier.net:8080/webroot/decision/view/form?viewlet=JT/IT/02/KJW/KJHZ/KJHZ.frm"
 );
 </script>
 
