@@ -76,7 +76,7 @@ body {
   }
   .container {
     width: 100%;
-    height: 700px;
+    height: 1080px;
     //阴影
     background-color: #fff;
     overflow: hidden;
@@ -92,20 +92,21 @@ body {
     }
     .main {
       width: 100%;
+      height: 1000px;
       display: flex;
       .sidebar {
         width: 17.8%;
       }
       .content {
         width: 82.2%;
-        height: 800px;
+        height: 100%;
         padding: 0 1%;
         background-color: #f2f2f2;
         overflow-y: auto;
         overflow-x: hidden;
         .router-tip {
           width: 100%;
-          height: 25px;
+          height: 35px;
           padding: 5px 0 0 8px;
           line-height: 75px;
           text-align: left;
